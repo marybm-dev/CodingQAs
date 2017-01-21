@@ -37,3 +37,24 @@ func isPermutation(textA: String, textB: String) -> Bool {
     
     return sortedA == sortedB
 }
+
+// 1.3 convert string into URL encoded string
+extension String {
+    func URLify() -> String {
+        let encoding = "%20"
+        var result = String()           // space: O(s) where s is length
+        
+        for char in self.characters {   // time: O(slogs) where s is length
+            if char == " " {
+                result += encoding
+            } else {
+                result += String(char)
+            }
+        }
+        return result
+    }
+}
+
+
+
+
